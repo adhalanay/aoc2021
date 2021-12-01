@@ -2,7 +2,7 @@ import System.IO
 import qualified Data.Text as Text
 import qualified Data.Text.IO as Text
 
-
+-- Part 1
 countIncs :: [Int] -> Maybe Int
 countIncs xs = countIncsAux 0 xs
 
@@ -19,6 +19,7 @@ countIncsAux acc xs
                   countIncsAux acc xs0
                 where x = head xs
                       xs0 = tail xs
+--For Part 2
 sumOfThree :: [Int]->[Int]
 sumOfThree xs = [xs !! i + (xs !! (i+1)) + (xs !! (i+2)) | i<-[0..(length xs)-3]]
 
@@ -27,4 +28,8 @@ main = do
   ls <- fmap Text.lines (Text.readFile "input")
   let lss =  map Text.unpack ls
   let xs = [read l:: Int | l<-lss]
-  print (countIncs (sumOfThree xs))
+  let solpart1 = "The answer to Part1: " ++ (show (countIncs xs))
+  let solpart2 = "The answer to Part2: " ++ (show (countIncs (sumOfThree xs)))
+  putStrLn solpart1
+  putStrLn solpart2
+  
