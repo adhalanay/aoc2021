@@ -50,8 +50,5 @@ main = do
   let solpart2 = "The answer to Part2: " ++ show(h2*v2)
   putStrLn solpart1
   putStrLn solpart2
- -- let solpart1 = "The answer to Part1: " ++ (show (countIncs xs))
- -- let solpart2 = "The answer to Part2: " ++ (show (countIncs (sumOfThree xs)))
- -- putStrLn solpart1
- --  putStrLn solpart2
+ 
   
