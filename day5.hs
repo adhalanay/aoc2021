@@ -10,23 +10,9 @@ import Debug.Trace
 data Point = P Int Int deriving (Show,Eq,Ord)
 data Segment = Seg Point Point deriving (Show,Eq,Ord)
 
-getX::Segment -> [Int]
-getX (Seg (P x1 y1) (P x2 y2)) = [x1,x2]
-
-getY::Segment -> [Int]
-getY (Seg (P x1 y1) (P x2 y2)) = [y1,y2]
-
-getCoords::[Segment]->(Int,Int)
-getCoords segs = (maximum listofXs, maximum listofYs)
-  where listofXs = [maximum (getX seg) | seg<-segs]
-        listofYs = [maximum (getY seg) | seg<-segs]
-
-listOfPoints :: (Int,Int) ->[[Int]]
-listOfPoints (xMax,yMax) = [[x,y] | x<-[0..xMax],y<-[0..yMax]]
 
 isStrait :: Segment->Bool
 isStrait (Seg (P x1 y1) (P x2 y2)) = x1==x2 || y1==y2
-
 
 makeRange::Int->Int->[Int]
 makeRange x y = if x<=y then [x..y] else [x,x-1..y]
