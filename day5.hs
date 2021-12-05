@@ -10,7 +10,6 @@ import Debug.Trace
 data Point = P Int Int deriving (Show,Eq,Ord)
 data Segment = Seg Point Point deriving (Show,Eq,Ord)
 
-
 isStrait :: Segment->Bool
 isStrait (Seg (P x1 y1) (P x2 y2)) = x1==x2 || y1==y2
 
