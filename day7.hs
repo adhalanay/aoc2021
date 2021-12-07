@@ -7,7 +7,7 @@ import Data.List.Split
 import Data.List (elemIndex)
 
 listOfDiffs :: [Int]->[Int]
-listOfDiffs xs = [sum [abs(x-y)| x<-xs]|y<-xs]
+listOfDiffs xs = [sum [abs(x-y)| x<-xs]|y<-[0..maximum xs]]
 
 sumOfProg :: Int -> Int
 sumOfProg x = x*(x+1) `div` 2
